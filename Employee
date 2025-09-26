@@ -1,0 +1,40 @@
+public class Employee {
+    private int empId;       
+    String name;               
+    protected double salary;   
+    public String role;        
+
+
+    public Employee(int empId, String name, double salary, String role) {
+        this.empId = empId;
+        this.name = name;
+        this.salary = salary;
+        this.role = role;
+    }
+
+
+    public int getEmpId() {
+        return empId;
+    }
+}
+import company.Employee;
+
+public class Manager extends Employee {
+
+    public Manager(int empId, String name, double salary, String role) {
+        super(empId, name, salary, role);
+    }
+
+    public void displayDetails() {
+
+         System.out.println(name);    
+        System.out.println("Salary: " + salary); 
+        System.out.println("Role: " + role);     
+        System.out.println("Employee ID: " + getEmpId()); 
+    }
+
+    public static void main(String[] args) {
+        Manager m = new Manager(101, "Alice", 75000, "Manager");
+        m.displayDetails();
+    }
+}
