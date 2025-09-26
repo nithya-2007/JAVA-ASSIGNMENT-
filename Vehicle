@@ -1,0 +1,62 @@
+class Vehicle {
+    String brand;
+    int speed;
+
+    Vehicle(String brand, int speed) {
+        this.brand = brand;
+        this.speed = speed;
+    }
+
+    void displayInfo() {
+        System.out.println("Brand: " + brand);
+        System.out.println("Speed: " + speed + " km/h");
+    }
+
+    void start() {
+        System.out.println(brand + " is starting...");
+    }
+}
+
+class Car extends Vehicle {
+    int doors;
+
+    Car(String brand, int speed, int doors) {
+        super(brand, speed);
+        this.doors = doors;
+    }
+
+    void displayCarDetails() {
+        displayInfo();
+        System.out.println("Number of doors: " + doors);
+    }
+}
+
+
+class Bike extends Vehicle {
+    boolean hasGear;
+
+    Bike(String brand, int speed, boolean hasGear) {
+        super(brand, speed);
+        this.hasGear = hasGear;
+    }
+
+    void displayBikeDetails() {
+        displayInfo();
+        System.out.println("Has Gear: " + hasGear);
+    }
+}
+
+
+public class VehicleManagement {
+    public static void main(String[] args) {
+        Car car = new Car("Toyota", 180, 4);
+        car.displayCarDetails();
+        car.start();
+
+        System.out.println();
+
+        Bike bike = new Bike("Yamaha", 120, true);
+        bike.displayBikeDetails();
+        bike.start();
+    }
+}
