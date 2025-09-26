@@ -1,0 +1,37 @@
+interface Payment {
+    void pay(double amount);
+}
+class CreditCardPayment implements Payment {
+    public void pay(double amount) {
+        System.out.println("Paid " + amount + " using Credit Card.");
+    }
+}
+class PayPalPayment implements Payment {
+    public void pay(double amount) {
+        System.out.println("Paid " + amount + " using PayPal.");
+    }
+}
+
+
+class CashPayment implements Payment {
+    public void pay(double amount) {
+        System.out.println("Paid " + amount + " in Cash.");
+    }
+}
+
+
+public class PaymentSystem {
+    public static void main(String[] args) {
+        Payment payment;
+        payment = new CreditCardPayment();
+        payment.pay(2500);
+
+
+        payment = new PayPalPayment();
+        payment.pay(1200);
+
+
+        payment = new CashPayment();
+        payment.pay(500);
+    }
+}
